@@ -3,3 +3,6 @@
 ################################################################################
 
 /AspnetCore.Study/src/AspnetCore.Study/bin/Debug/netcoreapp1.0
+/AspnetCore.Study/src/AspnetCore.Study/obj/Debug/netcoreapp1.0
+/AspnetCore.Study/src/AspnetCore.Study/AspnetCore.Study.xproj.user
+/AspnetCore.Study/.vs
