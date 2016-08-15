@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 
 namespace AspnetCore.Study.Controllers
 {
@@ -10,6 +11,7 @@ namespace AspnetCore.Study.Controllers
     {
         public IActionResult Index()
         {
+            ViewData["Debug"] = this.HttpContext.Request.Headers["UserAgent"] + Environment.NewLine + DateTime.Now;
             return View();
         }
 
