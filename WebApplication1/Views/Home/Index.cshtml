@@ -1,8 +1,11 @@
-﻿@using System.Reflection
+﻿@using System.Configuration
+@using System.Reflection
 @{
     ViewBag.Title = "Home Page";
 }
 
 <div class="jumbotron">
-    <h1>App Version v @HttpContext.Current.ApplicationInstance.GetType().BaseType.Assembly.GetName().Version</h1>
+    <h1>App v @HttpContext.Current.ApplicationInstance.GetType().BaseType.Assembly.GetName().Version</h1>
+    <h1>envir: @ConfigurationManager.AppSettings["envir"]</h1>
+    <h1>envir: @ConfigurationManager.AppSettings["connectionString"]</h1>
 </div>
