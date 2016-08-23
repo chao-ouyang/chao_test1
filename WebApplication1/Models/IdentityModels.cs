@@ -21,9 +21,12 @@ namespace WebApplication1.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
-        public ApplicationDbContext()
+        public ApplicationDbContext() : base ("DefaultConnection", false)
         {
-            this.Database.Connection.ConnectionString = ConfigurationManager.AppSettings["connectionString"];
+            if (ConfigurationManager.AppSettings["envir"] != null && ConfigurationManager.AppSettings["connectionString"] != null)
+            {
+                this.Database.Connection.ConnectionString = ConfigurationManager.AppSettings["connectionString"];
+            }
         }
 
         public static ApplicationDbContext Create()
