@@ -2,4 +2,4 @@
 
 deployment status test1
 
-[version](../AppVersion.txt)
+[version](../chao_test1/AppVersion.txt)
