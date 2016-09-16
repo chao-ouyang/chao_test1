@@ -2,4 +2,4 @@
 
 deployment status test1
 
-[version](../develop/AppVersion.txt)
+[version](https://raw.githubusercontent.com/chao-ouyang/chao_test1/develop/AppVersion.txt)
