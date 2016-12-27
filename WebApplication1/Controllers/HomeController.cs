@@ -25,14 +25,14 @@ namespace WebApplication1.Controllers
                         var line = reader.ReadLine();
                         if (line.Contains("appversion"));
                         {
-                            var startIdx = line.IndexOf("<span id=\'appversion\'>");
+                            var startIdx = line.IndexOf("<span id=\'appversion\'>") + 22;
                             var endIdx = line.IndexOf("</");
-                            var version = line.Substring(startIdx + 22, endIdx - startIdx - 1);
+                            var version = line.Substring(startIdx, endIdx - startIdx);
                             this.ViewBag.appversion = version;
 
-                            startIdx = line.IndexOf("<span id=\'buildversion\'>");
+                            startIdx = line.IndexOf("<span id=\'buildversion\'>") + 24;
                             endIdx = line.LastIndexOf("</");
-                            var build = line.Substring(startIdx + 24, endIdx - startIdx - 1);
+                            var build = line.Substring(startIdx, endIdx - startIdx);
                             this.ViewBag.buildversion = build;
                             break;
                         }
