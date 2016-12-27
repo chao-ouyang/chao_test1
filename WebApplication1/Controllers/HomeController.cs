@@ -27,12 +27,12 @@ namespace WebApplication1.Controllers
                         {
                             var startIdx = line.IndexOf("<span id=\'appversion\'>");
                             var endIdx = line.IndexOf("</");
-                            var version = line.Substring(startIdx + 1, endIdx - startIdx - 1);
+                            var version = line.Substring(startIdx + 22, endIdx - startIdx - 1);
                             this.ViewBag.appversion = version;
 
                             startIdx = line.IndexOf("<span id=\'buildversion\'>");
                             endIdx = line.LastIndexOf("</");
-                            var build = line.Substring(startIdx + 1, endIdx - startIdx - 1);
+                            var build = line.Substring(startIdx + 24, endIdx - startIdx - 1);
                             this.ViewBag.buildversion = build;
                             break;
                         }
