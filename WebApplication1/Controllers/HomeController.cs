@@ -23,18 +23,20 @@ namespace WebApplication1.Controllers
                     while (reader.EndOfStream == false)
                     {
                         var line = reader.ReadLine();
-                        if (line.Contains("appversion"));
+                        if (line.Contains("appversion"))
                         {
                             var startIdx = line.IndexOf("<span id=\'appversion\'>") + 22;
                             var endIdx = line.IndexOf("</");
                             var version = line.Substring(startIdx, endIdx - startIdx);
                             this.ViewBag.appversion = version;
+                        }
 
-                            startIdx = line.IndexOf("<span id=\'buildversion\'>") + 24;
-                            endIdx = line.LastIndexOf("</");
+                        if (line.Contains("buildversion"))
+                        {
+                            var startIdx = line.IndexOf("<span id=\'buildversion\'>") + 24;
+                            var endIdx = line.LastIndexOf("</");
                             var build = line.Substring(startIdx, endIdx - startIdx);
                             this.ViewBag.buildversion = build;
-                            break;
                         }
                     }
                 }
