@@ -21,8 +21,7 @@
       "essential": true,
       "memory": 2048,
       "command": [
-        "groups",
-        "sudo /var/app/app"
+        "/var/app/app"
       ],
       "workingDirectory": "/var/app",
       "mountPoints": [
@@ -44,8 +43,7 @@
       "essential": true,
       "memory": 2048,
       "command": [
-        "groups",
-        "sudo /var/app/app"
+        "/var/app/app"
       ],
       "workingDirectory": "/var/app",
       "mountPoints": [
@@ -67,8 +65,7 @@
       "essential": true,
       "memory": 2048,      
       "command": [
-        "groups",
-        "sudo /var/app/app"
+        "/var/app/app"
       ],
       "workingDirectory": "/var/app",
       "mountPoints": [
