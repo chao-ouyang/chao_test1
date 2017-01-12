@@ -1,0 +1,121 @@
+{
+  "AWSEBDockerrunVersion": 2,
+  "volumes": [
+    {
+      "name": "web-app-src",
+      "host": {
+        "sourcePath": "/var/app/current/publish"
+      }
+    },
+    {
+      "name": "nginx-proxy-conf",
+      "host": {
+        "sourcePath": "/var/app/current/proxy/conf.d"
+      }
+    }
+  ],
+  "containerDefinitions": [
+    {
+      "name": "web-app1",
+      "image": "microsoft/dotnet:1.1.0-runtime-deps",
+      "essential": true,
+      "memory": 2048,
+      "command": [
+        "groups",
+        "sudo /var/app/app"
+      ],
+      "workingDirectory": "/var/app",
+      "mountPoints": [
+        {
+          "sourceVolume": "web-app-src",
+          "containerPath": "/var/app",
+          "readOnly": false
+        },
+        {
+          "sourceVolume": "awseb-logs-web-app1",
+          "containerPath": "/var/log/web-app"
+        }
+      ],
+      "privileged": true
+    },
+    {
+      "name": "web-app2",
+      "image": "microsoft/dotnet:1.1.0-runtime-deps",
+      "essential": true,
+      "memory": 2048,
+      "command": [
+        "groups",
+        "sudo /var/app/app"
+      ],
+      "workingDirectory": "/var/app",
+      "mountPoints": [
+        {
+          "sourceVolume": "web-app-src",
+          "containerPath": "/var/app",
+          "readOnly": false
+        },
+        {
+          "sourceVolume": "awseb-logs-web-app2",
+          "containerPath": "/var/log/web-app"
+        }
+      ],
+      "privileged": true
+    },
+    {
+      "name": "web-app3",
+      "image": "microsoft/dotnet:1.1.0-runtime-deps",
+      "essential": true,
+      "memory": 2048,      
+      "command": [
+        "groups",
+        "sudo /var/app/app"
+      ],
+      "workingDirectory": "/var/app",
+      "mountPoints": [
+        {
+          "sourceVolume": "web-app-src",
+          "containerPath": "/var/app",
+          "readOnly": false
+        },
+        {
+          "sourceVolume": "awseb-logs-web-app3",
+          "containerPath": "/var/log/web-app"
+        }
+      ],
+      "privileged": true
+    },
+    {
+      "name": "nginx-proxy",
+      "image": "nginx",
+      "essential": true,
+      "memory": 256,
+      "portMappings": [
+        {
+          "hostPort": 80,
+          "containerPort": 80
+        }
+      ],
+      "links": [
+        "web-app1",
+        "web-app2",
+        "web-app3"
+      ],
+      "mountPoints": [
+        {
+          "sourceVolume": "web-app-src",
+          "containerPath": "/var/app",
+          "readOnly": true
+        },
+        {
+          "sourceVolume": "awseb-logs-nginx-proxy",
+          "containerPath": "/var/log/nginx"
+        },
+        {
+          "sourceVolume": "nginx-proxy-conf",
+          "containerPath": "/etc/nginx/conf.d",
+          "readOnly": true
+        }
+      ]
+    }
+  ]
+}
