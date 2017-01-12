@@ -4,7 +4,7 @@
     {
       "name": "web-app-src",
       "host": {
-        "sourcePath": "/var/app/current/publish"
+        "sourcePath": "/var/app/current/app"
       }
     },
     {
