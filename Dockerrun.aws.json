@@ -19,7 +19,7 @@
       "name": "web-app1",
       "image": "microsoft/dotnet:1.1.0-runtime-deps",
       "essential": true,
-      "memory": 1024,
+      "memoryReservation": 1024,
       "command": [
         "/var/app/app"
       ],
@@ -41,7 +41,7 @@
       "name": "web-app2",
       "image": "microsoft/dotnet:1.1.0-runtime-deps",
       "essential": true,
-      "memory": 1024,
+      "memoryReservation": 1024,
       "command": [
         "/var/app/app"
       ],
@@ -63,7 +63,7 @@
       "name": "nginx-proxy",
       "image": "nginx",
       "essential": true,
-      "memory": 1024,
+      "memoryReservation": 1024,
       "portMappings": [
         {
           "hostPort": 80,
