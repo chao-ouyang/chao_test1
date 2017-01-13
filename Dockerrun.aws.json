@@ -4,7 +4,7 @@
     {
       "name": "web-app-src",
       "host": {
-        "sourcePath": "/var/app/current/publish"
+        "sourcePath": "/var/app/current/app"
       }
     },
     {
@@ -17,7 +17,7 @@
   "containerDefinitions": [
     {
       "name": "web-app1",
-      "image": "docker.io/chaodeluxe/ebs-poc:1.1",
+      "image": "microsoft/dotnet:1.1.0-runtime-deps",
       "essential": true,
       "memory": 2048,
       "command": [
@@ -39,7 +39,7 @@
     },
     {
       "name": "web-app2",
-      "image": "docker.io/chaodeluxe/ebs-poc:1.1",
+      "image": "microsoft/dotnet:1.1.0-runtime-deps",
       "essential": true,
       "memory": 2048,
       "command": [
@@ -61,7 +61,7 @@
     },
     {
       "name": "web-app3",
-      "image": "docker.io/chaodeluxe/ebs-poc:1.1",
+      "image": "microsoft/dotnet:1.1.0-runtime-deps",
       "essential": true,
       "memory": 2048,      
       "command": [
