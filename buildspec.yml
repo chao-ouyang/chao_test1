@@ -1,0 +1,16 @@
+version: 0.1
+
+environment_variables:
+  plaintext:
+    key: "value"
+
+phases:
+  build:
+    commands:
+      - echo Build started on `date`
+      - tar -cf ./output/package.zip ./deployment
+
+artifacts:
+  files:
+    - ./package.zip
+  discard-paths: yes
