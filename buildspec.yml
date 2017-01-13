@@ -6,9 +6,8 @@ environment_variables:
 
 phases:
   build:
-    commands:
-      - echo Build started on `date`
-      - tar -cf ./output/package.zip ./deployment
+    commands:      
+      - zip -r package.zip ./app ./proxy Dockerrun.aws.json
 
 artifacts:
   files:
