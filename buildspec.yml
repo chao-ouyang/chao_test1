@@ -7,5 +7,5 @@ phases:
 
 artifacts:
   files:
-    - ./deployment
+    - ./deployment/*
   discard-paths: yes
