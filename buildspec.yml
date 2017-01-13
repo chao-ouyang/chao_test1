@@ -8,5 +8,5 @@ phases:
       - tar -cf ../package.zip .
 artifacts:
   files:
-    - ./package.zip
+    - ../package.zip
   discard-paths: yes
