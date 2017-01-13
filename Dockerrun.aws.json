@@ -60,28 +60,6 @@
       "privileged": true
     },
     {
-      "name": "web-app3",
-      "image": "microsoft/dotnet:1.1.0-runtime-deps",
-      "essential": true,
-      "memory": 2048,      
-      "command": [
-        "/var/app/app"
-      ],
-      "workingDirectory": "/var/app",
-      "mountPoints": [
-        {
-          "sourceVolume": "web-app-src",
-          "containerPath": "/var/app",
-          "readOnly": false
-        },
-        {
-          "sourceVolume": "awseb-logs-web-app3",
-          "containerPath": "/var/log/web-app"
-        }
-      ],
-      "privileged": true
-    },
-    {
       "name": "nginx-proxy",
       "image": "nginx",
       "essential": true,
@@ -94,8 +72,7 @@
       ],
       "links": [
         "web-app1",
-        "web-app2",
-        "web-app3"
+        "web-app2"
       ],
       "mountPoints": [
         {
