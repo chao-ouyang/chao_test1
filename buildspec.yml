@@ -7,9 +7,9 @@ environment_variables:
 phases:
   build:
     commands:      
-      - zip -r package.zip ./app ./proxy Dockerrun.aws.json
+      - echo no action
 
 artifacts:
   files:
-    - ./package.zip
-  discard-paths: yes
+    - ./**/*
+  discard-paths: false
