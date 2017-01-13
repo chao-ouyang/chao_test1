@@ -1,11 +1,8 @@
 version: 0.1
 
 phases:
-  build:
-    commands:
-      - echo Build started on `date`
 
 artifacts:
   files:
-    - ./deployment/*
+    - ./deployment/**/*
   discard-paths: yes
