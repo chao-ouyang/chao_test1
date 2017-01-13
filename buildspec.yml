@@ -7,7 +7,7 @@ environment_variables:
 phases:
   build:
     commands:      
-      - echo no action
+      - chmod -R 777 .
 
 artifacts:
   files:
