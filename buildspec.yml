@@ -14,11 +14,11 @@ phases:
   build:
     commands:
       - echo Build started on `date`
-      - tar -cf ./deployment/package.zip .output/deployment
+      - tar -cf ./output/package.zip ./deployment
   post_build:
     commands:
       - echo Build completed on `date`
 artifacts:
   files:
-    - output/package.zip
+    - ./output/package.zip
   discard-paths: yes
